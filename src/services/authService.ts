@@ -83,7 +83,7 @@ export class AuthService {
    */
   static async loginWithGoogle(): Promise<AuthResponse> {
     try {
-      const { data, error } = await supabase.auth.signInWithOAuth({
+      const { error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
           redirectTo: `${window.location.origin}/user-home`
@@ -95,8 +95,8 @@ export class AuthService {
       }
 
       // Note: For OAuth, we'll handle the user verification in the auth state change listener
-      // since the redirect happens immediately
-      return { user: data.user, error: null }
+      // since the redirect happens immediately. OAuth returns { provider, url }, not { user }
+      return { user: null, error: null }
     } catch (error) {
       return { 
         user: null, 

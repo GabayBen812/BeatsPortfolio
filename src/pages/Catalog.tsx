@@ -163,17 +163,17 @@ const Catalog = () => {
                       Upload, organize, and showcase your beats in one place. 
                       Build your portfolio and share your music with the world.
                     </p>
-                    <div className="d-inline-flex align-items-center flex-wrap row-gap-2 column-gap-6">
+                        <div className="d-flex flex-column flex-sm-row align-items-center gap-3 gap-sm-4">
                       <button
                         onClick={() => navigate("/upload")}
-                        className="btn btn-primary-gradient text-white fs-14 border-0 rounded-pill"
+                        className="btn btn-primary-gradient text-white fs-14 border-0 rounded-pill w-100 w-sm-auto"
                       >
                         <i className="bi bi-cloud-arrow-up me-2"></i>
                         Upload New Beat
                       </button>
                       <button
                         onClick={() => navigate("/user-home")}
-                        className="btn btn-outline-light text-white fs-14 border-1 rounded-pill"
+                        className="btn btn-outline-light text-white fs-14 border-1 rounded-pill w-100 w-sm-auto"
                       >
                         <i className="bi bi-house me-2"></i>
                         Back to Home
@@ -314,7 +314,7 @@ const Catalog = () => {
         {/* Beat Detail Modal */}
         {showBeatModal && selectedBeat && (
           <div className="modal show d-block" style={{ backgroundColor: 'rgba(0,0,0,0.8)' }}>
-            <div className="modal-dialog modal-lg modal-dialog-centered">
+            <div className="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
               <div className="modal-content bg-dark border border-white/20">
                 <div className="modal-header border-bottom border-white/20">
                   <h5 className="modal-title text-light">{selectedBeat.title}</h5>

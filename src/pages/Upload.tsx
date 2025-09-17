@@ -210,17 +210,17 @@ const Upload = () => {
                       Upload your latest beats and share them with the world. 
                       Add metadata, cover art, and build your portfolio.
                     </p>
-                    <div className="d-inline-flex align-items-center flex-wrap row-gap-2 column-gap-6">
+                    <div className="d-flex flex-column flex-sm-row align-items-center gap-3 gap-sm-4">
                       <button
                         onClick={() => navigate("/catalog")}
-                        className="btn btn-outline-light text-white fs-14 border-1 rounded-pill"
+                        className="btn btn-outline-light text-white fs-14 border-1 rounded-pill w-100 w-sm-auto"
                       >
                         <i className="bi bi-music-note-beamed me-2"></i>
                         View My Catalog
                       </button>
                       <button
                         onClick={() => navigate("/user-home")}
-                        className="btn btn-outline-light text-white fs-14 border-1 rounded-pill"
+                        className="btn btn-outline-light text-white fs-14 border-1 rounded-pill w-100 w-sm-auto"
                       >
                         <i className="bi bi-house me-2"></i>
                         Back to Home

@@ -1,22 +1,19 @@
 import { useEffect, useState } from 'react'
-import { Navigate, useLocation } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 import { supabase } from '../../lib/supabaseClient'
 import type { User } from '@supabase/supabase-js'
 
 interface AuthGuardProps {
   children: React.ReactNode
   requireAuth?: boolean // true = requires auth, false = requires no auth, undefined = public
-  redirectTo?: string // where to redirect if auth requirement not met
 }
 
 const AuthGuard: React.FC<AuthGuardProps> = ({ 
   children, 
-  requireAuth = true, 
-  redirectTo = '/login' 
+  requireAuth = true
 }) => {
   const [user, setUser] = useState<User | null>(null)
   const [loading, setLoading] = useState(true)
-  const location = useLocation()
 
   useEffect(() => {
     let mounted = true
@@ -41,7 +38,7 @@ const AuthGuard: React.FC<AuthGuardProps> = ({
     getInitialSession()
 
     // Listen for auth state changes
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
       if (mounted) {
         setUser(session?.user || null)
         setLoading(false)

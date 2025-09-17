@@ -126,7 +126,7 @@ const PublicProfile = () => {
         .select("*")
         .eq("user_id", userId)
         .eq("show_on_profile", true)
-        .order("profile_order", { ascending: true, nullsLast: true })
+        .order("profile_order", { ascending: true, nullsFirst: true })
         .order("created_at", { ascending: false });
 
       if (beatsError) {
@@ -209,21 +209,21 @@ const PublicProfile = () => {
               <div className="container">
                 <div className="row g-4 align-items-center">
                   <div className="col-lg-8">
-                    <div className="d-flex align-items-center gap-4">
+                    <div className="d-flex flex-column flex-sm-row align-items-center gap-4">
                       {displayImage ? (
                         <img
                           src={displayImage}
                           alt={displayTitle}
-                          className="rounded-circle"
+                          className="rounded-circle flex-shrink-0"
                           style={{ width: "120px", height: "120px", objectFit: "cover" }}
                         />
                       ) : (
-                        <div className="w-30 h-30 bg-primary-gradient rounded-circle d-flex align-items-center justify-content-center">
+                        <div className="w-30 h-30 bg-primary-gradient rounded-circle d-flex align-items-center justify-content-center flex-shrink-0">
                           <i className="bi bi-person-fill text-white fs-32"></i>
                         </div>
                       )}
                       
-                      <div>
+                      <div className="text-center text-sm-start">
                         <h1 className="text-light mb-2">
                           {displayTitle}
                         </h1>

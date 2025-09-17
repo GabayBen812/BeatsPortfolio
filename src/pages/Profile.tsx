@@ -99,7 +99,7 @@ const Profile = () => {
         .from("beats")
         .select("*")
         .eq("user_id", userId)
-        .order("profile_order", { ascending: true, nullsLast: true })
+        .order("profile_order", { ascending: true, nullsFirst: true })
         .order("created_at", { ascending: false });
 
       if (error) {
@@ -162,7 +162,7 @@ const Profile = () => {
     const fileName = `${Date.now()}_${Math.random().toString(36).substring(2)}.${fileExt}`;
     const filePath = `${user.id}/${fileName}`;
 
-    const { data, error } = await supabase.storage
+    const { error } = await supabase.storage
       .from(bucket)
       .upload(filePath, file, {
         cacheControl: '3600',
@@ -342,17 +342,17 @@ const Profile = () => {
                       Set up how your profile appears to the public. Choose which beats to showcase, 
                       add your information, and create your unique artist profile.
                     </p>
-                    <div className="d-inline-flex align-items-center flex-wrap row-gap-2 column-gap-6">
+                    <div className="d-flex flex-column flex-sm-row align-items-center gap-3 gap-sm-4">
                       <button
                         onClick={copyPublicUrl}
-                        className="btn btn-primary-gradient text-white fs-14 border-0 rounded-pill"
+                        className="btn btn-primary-gradient text-white fs-14 border-0 rounded-pill w-100 w-sm-auto"
                       >
                         <i className="bi bi-link-45deg me-2"></i>
                         Copy Public Link
                       </button>
                       <button
                         onClick={() => navigate("/catalog")}
-                        className="btn btn-outline-light text-white fs-14 border-1 rounded-pill"
+                        className="btn btn-outline-light text-white fs-14 border-1 rounded-pill w-100 w-sm-auto"
                       >
                         <i className="bi bi-music-note-beamed me-2"></i>
                         Back to Catalog

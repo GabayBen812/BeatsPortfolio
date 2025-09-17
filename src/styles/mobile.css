@@ -1,0 +1,111 @@
+/* Mobile-specific improvements for EchoLab */
+
+/* Ensure proper touch targets on mobile */
+@media (max-width: 768px) {
+  .btn {
+    min-height: 44px; /* iOS recommended touch target size */
+    padding: 12px 20px;
+  }
+  
+  /* Improve modal on mobile */
+  .modal-dialog {
+    margin: 10px;
+    max-width: calc(100% - 20px);
+  }
+  
+  /* Better spacing for mobile forms */
+  .form-control {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  /* Improve card spacing on mobile */
+  .card, .bg-white\/5 {
+    margin-bottom: 1rem;
+  }
+  
+  /* Better button spacing */
+  .d-flex.gap-3 {
+    gap: 1rem !important;
+  }
+  
+  /* Improve text readability */
+  .fs-14 {
+    font-size: 16px !important;
+  }
+  
+  /* Better image sizing */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Improve audio player on mobile */
+  audio {
+    width: 100%;
+    height: 40px;
+  }
+  
+  /* Better modal content spacing */
+  .modal-body {
+    padding: 1rem;
+  }
+  
+  /* Improve navigation on mobile */
+  .navbar-nav {
+    padding: 1rem 0;
+  }
+  
+  .nav-link {
+    padding: 0.75rem 1rem;
+    font-size: 16px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 576px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  /* Stack buttons vertically on very small screens */
+  .d-flex.flex-sm-row {
+    flex-direction: column !important;
+  }
+  
+  .w-sm-auto {
+    width: 100% !important;
+  }
+  
+  /* Reduce padding on very small screens */
+  .p-6 {
+    padding: 1rem !important;
+  }
+  
+  .p-8 {
+    padding: 1.5rem !important;
+  }
+  
+  /* Better hero section on mobile */
+  .hero-1 h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+  
+  /* Improve beat cards on mobile */
+  .col-lg-4 {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Landscape mobile orientation */
+@media (max-width: 768px) and (orientation: landscape) {
+  .modal-dialog {
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  .hero-1 {
+    padding: 2rem 0;
+  }
+}

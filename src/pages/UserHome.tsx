@@ -90,24 +90,24 @@ const UserHome = () => {
                       growth on <span className="fw-bold">EchoLab</span>.
                     </p>
 
-                     <div className="d-inline-flex align-items-center flex-wrap row-gap-2 column-gap-6">
+                     <div className="d-flex flex-column flex-sm-row align-items-center gap-3 gap-sm-4">
                        <button
                          onClick={() => navigate("/upload")}
-                         className="btn btn-primary-gradient text-white fs-14 border-0 rounded-pill"
+                         className="btn btn-primary-gradient text-white fs-14 border-0 rounded-pill w-100 w-sm-auto"
                        >
                          <i className="bi bi-cloud-arrow-up me-2"></i> Upload
                          Beat
                        </button>
                        <button
                          onClick={() => navigate("/catalog")}
-                         className="btn btn-outline-light text-white fs-14 border-1 rounded-pill"
+                         className="btn btn-outline-light text-white fs-14 border-1 rounded-pill w-100 w-sm-auto"
                        >
                          <i className="bi bi-music-note-beamed me-2"></i> My
                          Catalog
                        </button>
                        <button
                          onClick={handleLogout}
-                         className="btn btn-outline-danger text-white fs-14 border-1 rounded-pill"
+                         className="btn btn-outline-danger text-white fs-14 border-1 rounded-pill w-100 w-sm-auto"
                        >
                          <i className="bi bi-box-arrow-right me-2"></i> Logout
                        </button>
