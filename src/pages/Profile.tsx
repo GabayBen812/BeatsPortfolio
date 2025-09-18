@@ -342,17 +342,17 @@ const Profile = () => {
                       Set up how your profile appears to the public. Choose which beats to showcase, 
                       add your information, and create your unique artist profile.
                     </p>
-                    <div className="d-flex flex-column flex-sm-row align-items-center gap-3 gap-sm-4">
+                    <div className="d-inline-flex align-items-center flex-wrap row-gap-2 column-gap-6">
                       <button
                         onClick={copyPublicUrl}
-                        className="btn btn-primary-gradient text-white fs-14 border-0 rounded-pill w-100 w-sm-auto"
+                        className="btn btn-primary-gradient text-white fs-14 border-0 rounded-pill"
                       >
                         <i className="bi bi-link-45deg me-2"></i>
                         Copy Public Link
                       </button>
                       <button
                         onClick={() => navigate("/catalog")}
-                        className="btn btn-outline-light text-white fs-14 border-1 rounded-pill w-100 w-sm-auto"
+                        className="btn btn-outline-light text-white fs-14 border-1 rounded-pill"
                       >
                         <i className="bi bi-music-note-beamed me-2"></i>
                         Back to Catalog

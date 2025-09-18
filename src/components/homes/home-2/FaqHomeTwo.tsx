@@ -18,7 +18,7 @@ const FaqHomeTwo = () => {
               <div className="flex-shrink-0 d-inline-block w-20 h-2px bg-primary-gradient"></div><span
                 className="d-block fw-medium text-light fs-20 text-gradient-primary">Our FAQ</span>
             </div>
-            <h2 className="mb-0" data-cue="fadeIn">Questions About Our Zenith AI <span className="text-gradient-primary">We Have
+            <h2 className="mb-0" data-cue="fadeIn">Questions About Our EchoLab <span className="text-gradient-primary">We Have
                 Answers</span></h2>
           </div>
         </div>
